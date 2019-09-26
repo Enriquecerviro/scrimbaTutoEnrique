@@ -1,19 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component({
+@Component({ 
   selector: 'app-root',
-  /*inline-template*/
   template: `
-    <h1> {{title}}</h1>
-  `,
-  styleUrls: ['./app.component.css']
+    <app-customers></app-customers>
+  `
 })
 export class AppComponent implements OnInit {
-  
-  title : string;
+  constructor() { }
 
-  ngOnInit(){
-    this.title = 'scrimbaTutoEnrique';
+  ngOnInit() {
+
   }
-
+  
 }
