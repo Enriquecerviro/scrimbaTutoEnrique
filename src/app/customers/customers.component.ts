@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ICustomer } from '../shared/interfaces'
 
 @Component({
     selector: 'app-customers',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomersComponent implements OnInit {
     title: string;
-    people: any[];
+    people: ICustomer[];//TODO: AHORA PEOPLE TIENE QUE MATCH CON 'ICustomer', buena practica
     
+    isVisible = true;
+
+    changeVisibility(){
+        this.isVisible = !this.isVisible;
+    }
+
     constructor() {}
     
     ngOnInit() {
