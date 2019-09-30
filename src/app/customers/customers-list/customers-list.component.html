@@ -1,37 +1,39 @@
-<filter-textbox></filter-textbox>
+<filter-textbox (changed)="filter($event)"></filter-textbox>
 <br />
 <br />
+<!--TABLA PARA RENDERIZAR LOS DATOS DE CLIENTES Y PEDIDOS-->
 <table class="table table-hover">
-  
+    <!--CABECERA-->
     <thead>
-        <tr>
-            <th>Name</th>
-            <th>City</th>
-            <th>Order Total</th>
+        <tr> <!--USAMOS EVENTBINDING PARA...-->
+            <th (click)="sort('name')">Name</th>
+            <th (click)="sort('city')">City</th>
+            <th (click)="sort('orderTotal')">Order Total</th>
         </tr>
     </thead>
-   
-    <tr>
+    <!--FILAS-> NAME | CITY | ORDERTOTAL-->
+    <tr *ngFor="let cust of filteredCustomers">
         <td>
             <a>
-                
+                {{ cust.name | capitalize }}
             </a>
         </td>
-        <td></td>
-        <td></td>
+        <td>{{ cust.city }}</td>
+        <td>{{ cust.orderTotal | currency: 'EUR': 'symbol'}}</td>
     </tr>
-   
-    <tr>
+    <!--FILA FILTRO TOTAL PEDIDOSCLIENTES-->
+    <tr *ngIf="filteredCustomers && filteredCustomers.length">
         <td colspan="2">&nbsp;</td>
         <td>
-            
+            {{ customersOrderTotal | currency: 'EUR': 'symbol' }}
         </td>
     </tr>
-  
-    <tr>
+    <!--FILA FILTRO TOTALcLIENTES-->
+    <tr *ngIf="!filteredCustomers || !filteredCustomers.length">
         <td colspan="4">No customers found</td>
     </tr>
-
 </table>
-Number of Customers:
+<!--FIN TABLA DATOS/PEDIDOS CLIENTES-->
+<!--elemento independiente. -->
+Number of Customers: {{ filteredCustomers.length }}
 <br />
