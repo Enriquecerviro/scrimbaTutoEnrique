@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, of, from } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 
-import { ICustomer, IOrder } from "../../app/shared/interfaces";
+import { ICustomer, IOrder } from "../shared/interfaces";
 import { Icu } from "@angular/compiler/src/i18n/i18n_ast";
 
 @Injectable()
