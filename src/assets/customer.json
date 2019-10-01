@@ -40,5 +40,47 @@
     "name": "Enriue Adams",
     "city": "Eagles",
     "orderTotal": 15.99
+  },
+  {
+    "id": 8,
+    "name": "Teddy James",
+    "city": " Phoenix ",
+    "orderTotal": 90.99
+  },
+  {
+    "id": 10,
+    "name": "Michelle Simpson",
+    "city": "Los Angeles ",
+    "orderTotal": 890.99
+  },
+  {
+    "id": 30,
+    "name": "James Stwart",
+    "city": " Las Vegas ",
+    "orderTotal": 290.99
+  },
+  {
+    "id": 40,
+    "name": "Abelina Hotkins",
+    "city": "Vigo",
+    "orderTotal": 125.99
+  },
+  {
+    "id": 50,
+    "name": "Mrs James",
+    "city": "Seattle",
+    "orderTotal": 1500.99
+  },
+  {
+    "id": 60,
+    "name": "Speedy Gonzalez",
+    "city": "Los angles",
+    "orderTotal": 1950.99
+  },
+  {
+    "id": 70,
+    "name": "Macri Adams",
+    "city": "Eagles",
+    "orderTotal": 185.99
   }
 ]
