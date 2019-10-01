@@ -5,7 +5,6 @@ import { Observable, of, from } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 
 import { ICustomer, IOrder } from "../shared/interfaces";
-import { Icu } from "@angular/compiler/src/i18n/i18n_ast";
 
 @Injectable()
 export class DataService {
@@ -25,7 +24,7 @@ export class DataService {
    */
   getCustomers(): Observable<ICustomer[]> {
     return this.http
-      .get<ICustomer[]>(this.baseUrl + "customers.json")
+      .get<ICustomer[]>(this.baseUrl + "customer.json")
       .pipe(catchError(this.handleError));
   }
 
@@ -33,7 +32,7 @@ export class DataService {
    * 
    */
   getCustomer(id: number): Observable<ICustomer> {
-    return this.http.get<ICustomer[]>(this.baseUrl + "customers.json").pipe(
+    return this.http.get<ICustomer[]>(this.baseUrl + "customer.json").pipe(
       map(customers => {
         let customer = customers.filter((cust: ICustomer) => cust.id === id);
         return customer && customer.length ? customer[0] : null;

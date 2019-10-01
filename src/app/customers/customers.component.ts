@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ICustomer } from "../shared/interfaces";
+import { DataService } from '../core/data.service';
+
 
 @Component({
   selector: "app-customers",
@@ -15,11 +17,17 @@ export class CustomersComponent implements OnInit {
     this.isVisible = !this.isVisible;
   }
 
-  constructor() {}
+  constructor(private dataService  : DataService) {}
 
-  ngOnInit() {
+  ngOnInit() {// CUANDO SE INICIA EL COMPONENTE HAZME... : 
     this.title = "Customers";
-    this.people = [
+    /**
+     *UNA VEZ QUE SE INICIE EL COMPONENTE ENTONCES INICIA EL SERVICIO
+     * QUE TENDRÁ QUE SUSCRIBIRSE Y RECIBIR UN `customers` QUE SERÁ EL RESULTADO
+     * DE METERLO LOS 'people' dentro.     */  
+   this.dataService.getCustomers()
+   .subscribe((customers : ICustomer[]) => this.people = customers);
+     /* this.people = [
       {
         id: 1,
         name: "john Doe",
@@ -48,6 +56,6 @@ export class CustomersComponent implements OnInit {
         orderTotal: 599.99,
         customerSince: new Date(2002, 10, 31)
       }
-    ];
+    ];  */
   }
 }
