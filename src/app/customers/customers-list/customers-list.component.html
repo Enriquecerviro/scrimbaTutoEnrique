@@ -1,13 +1,6 @@
 <br />
 
-
-<label class="pure-material-textfield-standard">
-    <input placeholder=" " (changed)="filter($event)">
-    <span>Textfield</span>
-</label>
-
-<filter-textbox (changed)="filter($event)">
-
+<filter-textbox  (changed)="filter($event)">
 </filter-textbox>
 
 <br />
@@ -55,13 +48,13 @@
 
             </a>
         </td>
-        <td>{{ cust.city }}</td>
-        <td>{{ cust.orderTotal | currency: 'EUR': 'symbol'}}</td>
+        <td style="color: #526983">{{ cust.city }}</td>
+        <td style="color: #526983">{{ cust.orderTotal | currency: 'EUR': 'symbol'}}</td>
     </tr>
     <!--FILA FILTRO TOTAL PEDIDOSCLIENTES-->
     <tr *ngIf="filteredCustomers && filteredCustomers.length">
         <td colspan="2">&nbsp;</td>
-        <td>
+        <td style="color: #364A62">
             {{ customersOrderTotal | currency: 'EUR': 'symbol' }}
         </td>
     </tr>
@@ -70,10 +63,16 @@
         <td colspan="4">No customers found</td>
     </tr>
 </table>
+<!--FIN TABLA DATOS/PEDIDOS CLIENTES-->
+
+<!--elemento independiente. -->
 <div *ngIf="!filteredCustomers || !filteredCustomers.length">
     <progress class="pure-material-progress-circular"></progress>
 </div>
-<!--FIN TABLA DATOS/PEDIDOS CLIENTES-->
+
 <!--elemento independiente. -->
-Number of Customers: {{ filteredCustomers.length }}
+<span style="color: #364A62">
+    Number of Customers: {{ filteredCustomers.length }}
+</span>
+
 <br />
