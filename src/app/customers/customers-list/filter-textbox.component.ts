@@ -4,9 +4,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
   selector: `filter-textbox`,
   template: `
     <label class= "pure-material-textfield-standard">
-              
               <input type="text" [(ngModel)]="filter" placeholder=" " />
-              <span>Textfield</span>
+              <span >Search</span>
     </label>
   `
 })
